@@ -83,11 +83,12 @@ img {
   width: 100%;
 }
 
-header, footer{
-  background-color: #f4f4f4;
+.header, .footer{
+  background-color: #0e5223;
+  color: #ffffff;
 }
 
-header {
+.header {
   padding: 1.5rem 0 2.5rem;
 }
 
@@ -115,13 +116,20 @@ header {
   text-transform: uppercase;
 }
 
-.profile-img {
-  width: 200px;
+.nav-list a:hover, .nav-list a:focus {
+  text-decoration: underline;
+}
+
+.header-bio {
   margin-top: 2.5rem;
 }
 
-header p {
+.header-bio p {
   margin-top: 1.5rem;
+}
+
+.profile-img {
+  width: 200px;
 }
 
 .footer-contact {
@@ -132,11 +140,21 @@ header p {
   margin-top: 1.5rem;
 }
 
+.footer-contact-blurb {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 575px;
+}
+
 .footer-contact a {
   font-weight: bold;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   margin-left: 0.5rem;
+}
+
+.footer-contact a:hover, .footer-contact a:focus {
+  text-decoration: underline;
 }
 
 .footer-links {
@@ -149,7 +167,7 @@ header p {
 
 .footer-links a {
   font-weight: bold;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -161,7 +179,7 @@ header p {
   text-transform: uppercase;
 }
 
-footer .nav-list {
+.footer .nav-list {
   display: none;
 }
 
@@ -188,9 +206,14 @@ footer .nav-list {
 
 /* Media Queries */
 @media (min-width: 768px) {
+  .header {
+    padding: 3rem 0;
+  }
+
   .wrapper {
     padding: 0 2rem;
   }
+
   .nav-list {
     display: inline-block;
   }
@@ -200,21 +223,22 @@ footer .nav-list {
     float: left;
   }
 
-  .profile-img {
-    width: 250px;
-    margin-top: 3rem;
-    margin-left: 0.5rem;
-    float: right;
+  .nav-list a {
+    color: #ffffff;
   }
 
-  header {
-    padding: 3rem 0;
-  }
+  .header-bio { margin-top: 3rem; }
 
-  header p {
-    margin-top: 3rem;
+  .header-bio p {
+    margin-top: 0;
     font-size: 1.25rem;
     text-align: left;
+  }
+
+  .profile-img {
+    width: 250px;
+    margin-left: 0.5rem;
+    float: right;
   }
 
   h2 {
@@ -238,8 +262,11 @@ footer .nav-list {
     margin-top: 3rem;
   }
 
-  .footer-contact-blurb {
+  .footer-contact p {
     font-size: 1.25rem;
+  }
+
+  .footer-contact-blurb {
     margin-top: 2.5rem;
   }
 
@@ -266,5 +293,36 @@ footer .nav-list {
     content: "";
     display: table;
     clear: both;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header h1 {
+    float: left;
+  }
+
+  .header nav {
+    float: right;
+  }
+
+  .wrapper {
+    padding: 0 3rem;
+  }
+
+  .nav-list {
+    margin-top: 0;
+  }
+
+  .nav-list li {
+    margin-bottom: 0;
+  }
+
+  .profile-img {
+    width: 400px;
+    margin-left: 2rem;
+  }
+
+  .portfolio-project {
+    flex-basis: 33.3333%;
   }
 }
