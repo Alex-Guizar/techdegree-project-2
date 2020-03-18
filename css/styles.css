@@ -83,6 +83,40 @@ img {
   width: 100%;
 }
 
+/* Utility */
+.clearfix:after, .cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fr {
+  float: right;
+}
+
+.icon-star {
+  display: inline-block;
+  width: 24px;
+  height: 0;
+  padding-top: 24px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background-size: 24px 24px;
+}
+
+.icon-star.is-filled {
+  background-image: url("https://alexguizar.com/images/star-fill.svg");
+}
+
+.icon-star.is-half-filled {
+  background-image: url("https://alexguizar.com/images/star-half.svg");
+}
+
+.icon-star.is-empty {
+  background-image: url("https://alexguizar.com/images/star.svg");
+}
+
+/* Framework */
 .header, .footer{
   background-color: #0e5223;
   color: #ffffff;
@@ -92,7 +126,6 @@ img {
   padding: 1.5rem 0 2.5rem;
 }
 
-/* Framework */
 .wrapper {
   padding: 0 1rem;
 }
@@ -204,6 +237,23 @@ img {
   margin-top: 1rem;
 }
 
+.skills {
+  padding: 2.5rem 0;
+}
+
+.skills-list {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.skills-list li {
+  padding: 8px 12px;
+}
+
+.skills-list li:nth-child(2n) {
+  background-color: #efefef;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
   .header {
@@ -262,6 +312,23 @@ img {
     margin-top: 3rem;
   }
 
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .skills-list li {
+    flex: 0 0 50%;
+  }
+
+  .skills-list li:nth-child(2n) {
+    background-color: transparent;
+  }
+
+  .skills-list li:nth-child(4n), .skills-list li:nth-child(4n - 1) {
+    background-color: #efefef;
+  }
+
   .footer-contact p {
     font-size: 1.25rem;
   }
@@ -278,21 +345,15 @@ img {
     display: none;
   }
 
-  footer .nav-list {
+  .footer .nav-list {
     display: inline-block;
     font-size: 0.875rem;
     margin: 0;
   }
 
-  footer .nav-list a {
+  .footer .nav-list a {
     padding-top: 0;
     padding-bottom: 0;
-  }
-
-  .clearfix:after, .cf:after {
-    content: "";
-    display: table;
-    clear: both;
   }
 }
 
@@ -324,5 +385,17 @@ img {
 
   .portfolio-project {
     flex-basis: 33.3333%;
+  }
+
+  .skills-list li {
+    flex-basis: 33.3333%;
+  }
+
+  .skills-list li:nth-child(4n), .skills-list li:nth-child(4n - 1) {
+    background-color: transparent;
+  }
+
+  .skills-list li:nth-child(6n), .skills-list li:nth-child(6n - 1), .skills-list li:nth-child(6n - 2) {
+    background-color: #efefef;
   }
 }
